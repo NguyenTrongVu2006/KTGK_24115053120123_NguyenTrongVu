@@ -1,4 +1,4 @@
-package com.example.ktgk_24115053120123_nguyentrongvu
+package com.ute.ktgk_24115053120123_nguyentrongvu
 
 import android.content.Intent
 import android.os.Bundle
