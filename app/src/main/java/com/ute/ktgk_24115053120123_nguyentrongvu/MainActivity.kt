@@ -74,8 +74,13 @@ class MainActivity : AppCompatActivity() {
 
         // Xử lý nút Xem chi tiết khoản chi
         btnXemChiTiet_123.setOnClickListener {
-            // Tạm thời hiển thị Toast hoặc chuyển Activity ở câu 2
-            Toast.makeText(this, "Xem chi tiết: $tenKhoanChi_123 - ${soTien_123.toLong()} VNĐ", Toast.LENGTH_LONG).show()
+            val intent_123 = Intent(this, ChiTietChiTieuActivity::class.java).apply {
+                putExtra("EXTRA_TEN_123", tenKhoanChi_123)
+                putExtra("EXTRA_TIEN_123", soTien_123)
+                putExtra("EXTRA_GHICHU_123", ghiChu_123)
+                putExtra("EXTRA_THANHTOAN_123", false)
+            }
+            startActivity(intent_123)
         }
     }
 }

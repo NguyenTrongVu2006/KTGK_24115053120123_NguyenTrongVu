@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTieuDeChiTiet_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHI TIẾT KHOẢN CHI"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tvNoiDungChiTiet_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:lineSpacingExtra="6dp"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/btnChinhSua_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chỉnh sửa khoản chi"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnQuayLai_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quay lại màn hình chính"
+        android:backgroundTint="#757575" />
+
+</LinearLayout>
