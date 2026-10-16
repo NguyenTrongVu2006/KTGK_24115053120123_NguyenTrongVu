@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvTieuDeChinhSua_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHỈNH SỬA KHOẢN CHI"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <EditText
+        android:id="@+id/edtSuaTen_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên khoản chi"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/edtSuaSoTien_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số tiền (VNĐ)"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/edtSuaGhiChu_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ghi chú"
+        android:minHeight="48dp"
+        android:layout_marginBottom="16dp" />
+
+    <CheckBox
+        android:id="@+id/cbSuaThanhToan_123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã thanh toán"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnLuuChinhSua_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu thay đổi"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btnHuyChinhSua_123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hủy chỉnh sửa"
+        android:backgroundTint="#F44336" />
+
+</LinearLayout>
