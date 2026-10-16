@@ -1,13 +1,34 @@
 package com.ute.ktgk_24115053120123_nguyentrongvu
 
 import android.os.Bundle
+import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ChiTietChiTieuActivity : AppCompatActivity() {
+    private val suaKhoanChiLauncher_123 = registerForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK && result.data != null) {
+            val data = result.data!!
+            tenKhoanChi_123 = data.getStringExtra("EXTRA_TEN_123") ?: tenKhoanChi_123
+            soTien_123 = data.getDoubleExtra("EXTRA_TIEN_123", soTien_123)
+            ghiChu_123 = data.getStringExtra("EXTRA_GHICHU_123") ?: ghiChu_123
+            daThanhToan_123 = data.getBooleanExtra("EXTRA_THANHTOAN_123", daThanhToan_123)
 
+            val trangThai_123 = if (daThanhToan_123) "Đã thanh toán" else "Chưa thanh toán"
+            tvNoiDungChiTiet_123.text = "Tên khoản chi: $tenKhoanChi_123\n" +
+                    "Số tiền: ${soTien_123.toLong()} VNĐ\n" +
+                    "Ghi chú: $ghiChu_123\n" +
+                    "Trạng thái: $trangThai_123"
+
+            Toast.makeText(this, "Đã cập nhật dữ liệu mới!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Đã hủy chỉnh sửa, giữ nguyên dữ liệu!", Toast.LENGTH_SHORT).show()
+        }
+    }
     private lateinit var tvNoiDungChiTiet_123: TextView
     private lateinit var btnChinhSua_123: Button
     private lateinit var btnQuayLai_123: Button
@@ -29,7 +50,15 @@ class ChiTietChiTieuActivity : AppCompatActivity() {
         btnQuayLai_123 = findViewById(R.id.btnQuayLai_123)
 
         nhanVaHienThiDuLieu_123()
-
+        btnChinhSua_123.setOnClickListener {
+            val intent_123 = Intent(this, ChinhSuaChiTieuActivity::class.java).apply {
+                putExtra("EXTRA_TEN_123", tenKhoanChi_123)
+                putExtra("EXTRA_TIEN_123", soTien_123)
+                putExtra("EXTRA_GHICHU_123", ghiChu_123)
+                putExtra("EXTRA_THANHTOAN_123", daThanhToan_123)
+            }
+            suaKhoanChiLauncher_123.launch(intent_123)
+        }
         btnQuayLai_123.setOnClickListener {
             finish()
         }
